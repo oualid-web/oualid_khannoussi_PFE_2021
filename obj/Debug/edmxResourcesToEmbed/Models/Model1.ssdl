@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Gestion_riad2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Num_clt" />
+    </Key>
+    <Property Name="Num_clt" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Nom_clt" Type="varchar" MaxLength="30" />
+    <Property Name="Prenom_clt" Type="varchar" MaxLength="30" />
+    <Property Name="adress" Type="varchar" MaxLength="70" />
+    <Property Name="Nationalité" Type="varchar" MaxLength="20" />
+    <Property Name="télé_clt" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employé">
+    <Key>
+      <PropertyRef Name="Num_empl" />
+    </Key>
+    <Property Name="Num_empl" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Nom_empl" Type="varchar" MaxLength="30" />
+    <Property Name="Prénom_empl" Type="varchar" MaxLength="30" />
+    <Property Name="télé_empl" Type="varchar" MaxLength="20" />
+    <Property Name="repos" Type="varchar" MaxLength="10" />
+    <Property Name="dat_embouchement" Type="varchar" MaxLength="20" />
+    <Property Name="Num_gerant" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="Gerant">
+    <Key>
+      <PropertyRef Name="Num_gerant" />
+    </Key>
+    <Property Name="Num_gerant" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Nom_gerant" Type="varchar" MaxLength="30" />
+    <Property Name="Prénom_gerant" Type="varchar" MaxLength="30" />
+    <Property Name="Numero_télé" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="reservation">
+    <Key>
+      <PropertyRef Name="Num_res" />
+    </Key>
+    <Property Name="Num_res" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dat_res" Type="date" />
+    <Property Name="Typpe_res" Type="varchar" MaxLength="50" />
+    <Property Name="Duré_res" Type="int" />
+    <Property Name="Nb_Adult" Type="int" />
+    <Property Name="Nb_Enfant" Type="int" />
+    <Property Name="Num_clt" Type="varchar" MaxLength="6" />
+    <Property Name="Num_empl" Type="varchar" MaxLength="6" />
+    <Property Name="Prix_res" Type="money" />
+  </EntityType>
+  <Association Name="FK__Employé__Num_ger__6B24EA82">
+    <End Role="Gerant" Type="Self.Gerant" Multiplicity="0..1" />
+    <End Role="Employé" Type="Self.Employé" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gerant">
+        <PropertyRef Name="Num_gerant" />
+      </Principal>
+      <Dependent Role="Employé">
+        <PropertyRef Name="Num_gerant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reservati__Num_c__74AE54BC">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Num_clt" />
+      </Principal>
+      <Dependent Role="reservation">
+        <PropertyRef Name="Num_clt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reservati__Num_e__75A278F5">
+    <End Role="Employé" Type="Self.Employé" Multiplicity="0..1" />
+    <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employé">
+        <PropertyRef Name="Num_empl" />
+      </Principal>
+      <Dependent Role="reservation">
+        <PropertyRef Name="Num_empl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Gestion_riad2ModelStoreContainer">
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employé" EntityType="Self.Employé" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gerant" EntityType="Self.Gerant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Employé__Num_ger__6B24EA82" Association="Self.FK__Employé__Num_ger__6B24EA82">
+      <End Role="Gerant" EntitySet="Gerant" />
+      <End Role="Employé" EntitySet="Employé" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reservati__Num_c__74AE54BC" Association="Self.FK__reservati__Num_c__74AE54BC">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="reservation" EntitySet="reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reservati__Num_e__75A278F5" Association="Self.FK__reservati__Num_e__75A278F5">
+      <End Role="Employé" EntitySet="Employé" />
+      <End Role="reservation" EntitySet="reservation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

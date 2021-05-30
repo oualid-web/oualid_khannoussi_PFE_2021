@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{637B5C97-D538-4217-AACD-3E404BACB4A0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gestion_riad_projet_fin_etude</RootNamespace>
+    <AssemblyName>gestion_riad_projet_fin_etude</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44324</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArtController.cs" />
+    <Compile Include="Controllers\chambresController.cs" />
+    <Compile Include="Controllers\Clients1Controller.cs" />
+    <Compile Include="Controllers\Clients2Controller.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\Clients_emplController.cs" />
+    <Compile Include="Controllers\contactController.cs" />
+    <Compile Include="Controllers\cuisineController.cs" />
+    <Compile Include="Controllers\Employé1Controller.cs" />
+    <Compile Include="Controllers\EmployéController.cs" />
+    <Compile Include="Controllers\Gerant_employéController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\le_riadController.cs" />
+    <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\login_emplController.cs" />
+    <Compile Include="Controllers\offerController.cs" />
+    <Compile Include="Controllers\reservations1Controller.cs" />
+    <Compile Include="Controllers\reservations2Controller.cs" />
+    <Compile Include="Controllers\reservationsController.cs" />
+    <Compile Include="Controllers\reservation_emplController.cs" />
+    <Compile Include="Controllers\spamassageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Account_empl.cs" />
+    <Compile Include="Models\Client.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employé.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gerant.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reservation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\image\espace_Art\ar2.jpg" />
+    <Content Include="Content\image\espace_Art\ar3.jpg" />
+    <Content Include="Content\image\espace_Art\ar4.jpg" />
+    <Content Include="Content\image\espace_Art\ar5.jpg" />
+    <Content Include="Content\image\espace_Art\ar6.jpg" />
+    <Content Include="Content\image\espace_Art\art1.jpg" />
+    <Content Include="Content\image\espace_Art\Azoulay_art2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\Azoualy_chambre.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\ch1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\ch2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\ch3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\ch4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\ch5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chf1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chf2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chf3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chf4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chf5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chm1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chm2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chm3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chm4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chm5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\cho1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\cho2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\cho3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\cho4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\cho5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chs1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chs2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chs3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chs4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\chs5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_f1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_f2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_f3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_f4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_f5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_j1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_j2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_j3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_j4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_j5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_r1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_r2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_r3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_r4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_r5.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_s1.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_s2.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_s3.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_s4.jpg" />
+    <Content Include="Content\image\espace_Art\espace_chambre\suit_s5.jpg" />
+    <Content Include="Content\image\espace_chambre\Azoualy_chambre.jpg" />
+    <Content Include="Content\image\espace_chambre\ch1.jpg" />
+    <Content Include="Content\image\espace_chambre\ch2.jpg" />
+    <Content Include="Content\image\espace_chambre\ch3.jpg" />
+    <Content Include="Content\image\espace_chambre\ch4.jpg" />
+    <Content Include="Content\image\espace_chambre\ch5.jpg" />
+    <Content Include="Content\image\espace_chambre\chf1.jpg" />
+    <Content Include="Content\image\espace_chambre\chf2.jpg" />
+    <Content Include="Content\image\espace_chambre\chf3.jpg" />
+    <Content Include="Content\image\espace_chambre\chf4.jpg" />
+    <Content Include="Content\image\espace_chambre\chf5.jpg" />
+    <Content Include="Content\image\espace_chambre\chm1.jpg" />
+    <Content Include="Content\image\espace_chambre\chm2.jpg" />
+    <Content Include="Content\image\espace_chambre\chm3.jpg" />
+    <Content Include="Content\image\espace_chambre\chm4.jpg" />
+    <Content Include="Content\image\espace_chambre\chm5.jpg" />
+    <Content Include="Content\image\espace_chambre\cho1.jpg" />
+    <Content Include="Content\image\espace_chambre\cho2.jpg" />
+    <Content Include="Content\image\espace_chambre\cho3.jpg" />
+    <Content Include="Content\image\espace_chambre\cho4.jpg" />
+    <Content Include="Content\image\espace_chambre\cho5.jpg" />
+    <Content Include="Content\image\espace_chambre\chs1.jpg" />
+    <Content Include="Content\image\espace_chambre\chs2.jpg" />
+    <Content Include="Content\image\espace_chambre\chs3.jpg" />
+    <Content Include="Content\image\espace_chambre\chs4.jpg" />
+    <Content Include="Content\image\espace_chambre\chs5.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_f1.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_f2.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_f3.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_f4.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_f5.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_j1.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_j2.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_j3.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_j4.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_j5.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_r1.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_r2.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_r3.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_r4.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_r5.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_s1.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_s2.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_s3.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_s4.jpg" />
+    <Content Include="Content\image\espace_chambre\suit_s5.jpg" />
+    <Content Include="Content\image\espace_contact\contact.PNG" />
+    <Content Include="Content\image\espace_cuisine\cosina.jpg" />
+    <Content Include="Content\image\espace_cuisine\cui1.jpg" />
+    <Content Include="Content\image\espace_cuisine\cui2.jpg" />
+    <Content Include="Content\image\espace_cuisine\cui3.jpg" />
+    <Content Include="Content\image\espace_cuisine\cui4.jpg" />
+    <Content Include="Content\image\espace_cuisine\cui5.jpg" />
+    <Content Include="Content\image\espace_ofr\offre_special.PNG" />
+    <Content Include="Content\image\espace_riad\rd1.jpg" />
+    <Content Include="Content\image\espace_riad\rd10.jpg" />
+    <Content Include="Content\image\espace_riad\rd2.jpg" />
+    <Content Include="Content\image\espace_riad\rd3.jpg" />
+    <Content Include="Content\image\espace_riad\rd4.jpg" />
+    <Content Include="Content\image\espace_riad\rd5.jpg" />
+    <Content Include="Content\image\espace_riad\rd6.jpg" />
+    <Content Include="Content\image\espace_riad\rd7.jpg" />
+    <Content Include="Content\image\espace_riad\rd8.jpg" />
+    <Content Include="Content\image\espace_riad\rd9.jpg" />
+    <Content Include="Content\image\espace_riad\riad.PNG" />
+    <Content Include="Content\image\espace_spa\azoulay_spa.jpg" />
+    <Content Include="Content\image\espace_spa\sp1.jpeg" />
+    <Content Include="Content\image\espace_spa\sp2.jpg" />
+    <Content Include="Content\image\espace_spa\sp3.jpg" />
+    <Content Include="Content\image\espace_spa\sp4.jpg" />
+    <Content Include="Content\image\espace_spa\spa2.jpg" />
+    <Content Include="Content\image\image_aceuil\adm.jpg" />
+    <Content Include="Content\image\image_aceuil\administrateur.png" />
+    <Content Include="Content\image\image_aceuil\administration_back.jpg" />
+    <Content Include="Content\image\image_aceuil\arrt.jpg" />
+    <Content Include="Content\image\image_aceuil\avrtissement.PNG" />
+    <Content Include="Content\image\image_aceuil\azoulay_pisicne.jpg" />
+    <Content Include="Content\image\image_aceuil\chamber.jpg" />
+    <Content Include="Content\image\image_aceuil\cuisiin.jpg" />
+    <Content Include="Content\image\image_aceuil\empl.jpg" />
+    <Content Include="Content\image\image_aceuil\le riad.jpg" />
+    <Content Include="Content\image\image_aceuil\ofr.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-andrew-neel-2312369.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-christina-morillo-1181325.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-fauxels-3183183.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-fauxels-3183197.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-fauxels-3184418.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-mateusz-dach-450035.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-pixabay-414645.jpg" />
+    <Content Include="Content\image\image_aceuil\pexels-snapwire-618613.jpg" />
+    <Content Include="Content\image\image_aceuil\spa.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="font\fontawesome-webfont.eot" />
+    <Content Include="font\fontawesome-webfont.ttf" />
+    <Content Include="font\fontawesome-webfont.woff" />
+    <Content Include="font\fontawesome-webfont.woff2" />
+    <Content Include="font\FontAwesome.otf" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="styles\font-awesome.css" />
+    <Content Include="styles\style.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Art\Art_riad.cshtml" />
+    <Content Include="Views\chambres\chambres.cshtml" />
+    <Content Include="Views\contact\Contact_riad.cshtml" />
+    <Content Include="Views\cuisine\cuisine_riad.cshtml" />
+    <Content Include="Views\le_riad\riad.cshtml" />
+    <Content Include="Views\offer\ofr.cshtml" />
+    <Content Include="Views\spamassage\spaetmassage.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients1\Create.cshtml" />
+    <Content Include="Views\Clients1\Delete.cshtml" />
+    <Content Include="Views\Clients1\Details.cshtml" />
+    <Content Include="Views\Clients1\Edit.cshtml" />
+    <Content Include="Views\Clients1\Index.cshtml" />
+    <Content Include="Views\Clients2\Create.cshtml" />
+    <Content Include="Views\Clients2\Delete.cshtml" />
+    <Content Include="Views\Clients2\Details.cshtml" />
+    <Content Include="Views\Clients2\Edit.cshtml" />
+    <Content Include="Views\Clients2\Index.cshtml" />
+    <Content Include="Views\reservations\Create.cshtml" />
+    <Content Include="Views\reservations\Delete.cshtml" />
+    <Content Include="Views\reservations\Details.cshtml" />
+    <Content Include="Views\reservations\Edit.cshtml" />
+    <Content Include="Views\reservations\Index.cshtml" />
+    <Content Include="Views\reservations1\Create.cshtml" />
+    <Content Include="Views\reservations1\Delete.cshtml" />
+    <Content Include="Views\reservations1\Details.cshtml" />
+    <Content Include="Views\reservations1\Edit.cshtml" />
+    <Content Include="Views\reservations1\Index.cshtml" />
+    <Content Include="Views\reservations2\Create.cshtml" />
+    <Content Include="Views\reservations2\Delete.cshtml" />
+    <Content Include="Views\reservations2\Details.cshtml" />
+    <Content Include="Views\reservations2\Edit.cshtml" />
+    <Content Include="Views\reservations2\Index.cshtml" />
+    <Content Include="Views\_LayoutPage1.cshtml" />
+    <Content Include="Views\login\Login.cshtml" />
+    <Content Include="Views\login\Create.cshtml" />
+    <Content Include="Views\login\erreur.cshtml" />
+    <Content Include="Views\Employé\Create.cshtml" />
+    <Content Include="Views\Employé\Delete.cshtml" />
+    <Content Include="Views\Employé\Details.cshtml" />
+    <Content Include="Views\Employé\Edit.cshtml" />
+    <Content Include="Views\Employé\Index.cshtml" />
+    <Content Include="Views\Employé1\Create.cshtml" />
+    <Content Include="Views\Employé1\Delete.cshtml" />
+    <Content Include="Views\Employé1\Details.cshtml" />
+    <Content Include="Views\Employé1\Edit.cshtml" />
+    <Content Include="Views\Employé1\Index.cshtml" />
+    <Content Include="Views\Gerant_employé\Index.cshtml" />
+    <Content Include="Views\_LayoutPage2.cshtml" />
+    <Content Include="Views\login_empl\Login.cshtml" />
+    <Content Include="Views\login_empl\Create.cshtml" />
+    <Content Include="Views\login_empl\erreur.cshtml" />
+    <Content Include="Views\Clients_empl\Create.cshtml" />
+    <Content Include="Views\Clients_empl\Delete.cshtml" />
+    <Content Include="Views\Clients_empl\Details.cshtml" />
+    <Content Include="Views\Clients_empl\Edit.cshtml" />
+    <Content Include="Views\Clients_empl\Index.cshtml" />
+    <Content Include="Views\reservation_empl\Create.cshtml" />
+    <Content Include="Views\reservation_empl\Delete.cshtml" />
+    <Content Include="Views\reservation_empl\Details.cshtml" />
+    <Content Include="Views\reservation_empl\Edit.cshtml" />
+    <Content Include="Views\reservation_empl\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58891</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44324/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

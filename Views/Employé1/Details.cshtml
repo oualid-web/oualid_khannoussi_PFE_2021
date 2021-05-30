@@ -1,0 +1,67 @@
+﻿@model gestion_riad_projet_fin_etude.Models.Employé
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employé</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom_empl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom_empl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prénom_empl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prénom_empl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.télé_empl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.télé_empl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dat_embouchement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dat_embouchement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gerant.Nom_gerant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gerant.Nom_gerant)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Num_empl }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

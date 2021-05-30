@@ -1,0 +1,232 @@
+﻿@model IEnumerable<gestion_riad_projet_fin_etude.Models.reservation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-image: url('../../Content/image/image_aceuil/pexels-pixabay-414645.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        h1 {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        span {
+            background-color: orangered;
+        }
+
+
+
+        th {
+            text-align: center;
+            color: black;
+            font-size: large;
+            border: solid 2px white;
+            background-color: #e2aa5b;
+            border: solid 2px white;
+        }
+
+        td {
+            background-color: rgba(0,0,0,0.6);
+            text-align: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            color: white;
+            border: solid 2px white;
+        }
+
+        h2 {
+            color: bisque;
+            text-align: left;
+            font-size: x-large;
+        }
+
+        .back {
+            background-color: rgba(0,0,0,0.7);
+            width: 250px;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+        }
+
+            .back:hover {
+                background-color: gold;
+                border-radius: 10px;
+            }
+
+        .go {
+            background-color: rgba(0,0,0,0.7);
+            width: 250px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+            .go:hover {
+                background-color: gold;
+                border-radius: 10px;
+            }
+
+        .crud {
+            border: none;
+            background-color: none;
+        }
+
+        a {
+            color: #0094ff;
+        }
+        .euro {
+            color: bisque;
+            font-weight: bold;
+            background-color:transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Riad <span>A</span>l'Wazir</h1>
+    <h2>Liste des Réservations</h2><hr style="background-color:yellow;height:3px;" />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dat_res)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Typpe_res)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duré_res)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nb_Adult)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nb_Enfant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.Num_clt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prix_res)
+            </th>
+
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dat_res)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Typpe_res)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duré_res) <span class="euro"> – Jour(s)</span>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nb_Adult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nb_Enfant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.Num_clt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix_res)<span class="euro"> €</span>
+        </td>
+        <td class="crud">
+            <span style="background-color:darkseagreen;border:solid 2px black;border-radius:5px;width:100px;text-align:left;padding:0px 15px 0px 15px;color:white;">@Html.ActionLink("Modifier", "Edit", new { id = item.Num_res })</span>
+            <span style="background-color:red;border:solid 2px black;border-radius:5px;width:100px;padding:0px 15px 0px 15px;">@Html.ActionLink("Supprimer", "Delete", new { id = item.Num_res })</span>
+        </td>
+
+    </tr>
+        
+
+    
+
+    
+    }
+
+    </table><br />
+
+    <p class="go">
+        @Html.ActionLink("Quitter", "Index", "Home")
+    </p><br />
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* *@
+

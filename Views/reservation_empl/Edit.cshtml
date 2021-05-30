@@ -1,0 +1,298 @@
+﻿@model gestion_riad_projet_fin_etude.Models.reservation
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('../../Content/image/image_aceuil/pexels-pixabay-414645.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .form-horizontal {
+            max-width: 380px;
+            margin: auto;
+            margin-top: 70px;
+            background-color: rgba(0,0, 0,0.8);
+            text-align: center;
+            border-radius: 20px;
+            padding: 40px;
+            color: #ffff;
+            box-sizing: border-box;
+        }
+
+        .form-control {
+            width: 100%;
+            margin: 10px 0px;
+            outline: none;
+            background-color: transparent;
+            color: #ffff;
+            padding: 10px 6px;
+            font-size: 18px;
+            font-weight: bold;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px #fff solid;
+            height: 40px;
+        }
+
+        .control-label {
+            color:goldenrod;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+            margin-left: -10px;
+        }
+
+        .btn {
+            width: 80%;
+            border-radius: 12px;
+            padding: 10px;
+            background-color: rgb(90,120,190);
+            color: #fff;
+            font-size: 20px;
+            outline: none;
+            cursor: pointer;
+           
+        }
+
+            .btn:hover {
+                background-color: gold;
+            }
+
+        h3 {
+            color: #ffff;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+
+
+        .select {
+            color: saddlebrown;
+        }
+
+        #type {
+            color: aquamarine;
+        }
+
+        #prix {
+            color: aquamarine;
+        }
+
+        #prix {
+            padding-left: 80px;
+        }
+
+        .text-danger {
+            color: red;
+            background-color: transparent;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h3>reservation</h3>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Num_res)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Dat_res, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Dat_res, new { htmlAttributes = new { @class = "form-control", @id = "dat_res" } })
+                    @Html.ValidationMessageFor(model => model.Dat_res, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Typpe_res, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Typpe_res, new { htmlAttributes = new { @class = "form-control", @id = "type", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.Typpe_res, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Duré_res, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Duré_res, new { htmlAttributes = new { @class = "form-control", @id = "dure_res" } })
+                    @Html.ValidationMessageFor(model => model.Duré_res, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nb_Adult, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nb_Adult, new { htmlAttributes = new { @class = "form-control", @id = "adl" } })
+                    @Html.ValidationMessageFor(model => model.Nb_Adult, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nb_Enfant, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nb_Enfant, new { htmlAttributes = new { @class = "form-control", @id = "enf" } })
+                    @Html.ValidationMessageFor(model => model.Nb_Enfant, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Num_clt, "Num_clt", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Num_clt", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Num_clt, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Num_empl, "Num_empl", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Num_empl", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Num_empl, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Prix_res, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Prix_res, new { htmlAttributes = new { @class = "form-control", @id = "prix", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.Prix_res, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group"><br />
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <script type="text/javascript">
+
+        var tx_prix = document.getElementById("prix");
+        var tx_nba = document.getElementById("adl");
+        var tx_nbe = document.getElementById("enf");
+        var tp = document.getElementById("type");
+        var num = document.getElementById("num_res");
+        var dat = document.getElementById("dat_res");
+        var dure = document.getElementById("dure_res");
+
+
+
+
+
+        if (tp.value == "Atelier Culinaire") {
+            alert("atelier ");
+            tarif = 110;
+        }
+        else {
+            tarif = 170;
+            alert("dazt");
+        }
+        //if (tp.value == "Bien Être") {
+        //    alert("bien etre");
+        //    tarif = 170;
+        //}
+
+        alert("rien");
+        tarif_enf = tarif / 2;
+
+        tx_nbe.addEventListener("change", function () {
+
+            if (tx_nba.value != 0) {
+                tx_prix.value = (tx_nba.value * tarif + tx_nbe.value * tarif_enf) * dure.value;
+            }
+            if (tx_nba.value == 0) {
+                alert("Attention,Le nombre d'adultes ou d'enfants ne doit pas etre null");
+                tx_prix.value = "";
+                tx_nbe.value = "";
+                tx_nba.value = "";
+            }
+
+            //if (tx_nba.value == 2 && tx_nbe.value == 0) {
+            //    tx_prix.value = tarif;
+            //}
+            //if (tx_nba.value == 1 && tx_nbe.value == 0) {
+            //    tx_prix.value = tarif / 2;
+            //}
+            //if (tx_nba.value == 1 && tx_nbe.value == 1) {
+            //    tx_prix.value = tarif / 2 + tarif / 4;
+            //}
+            //if (tx_nba.value > 2 && tx_nbe.value == 0) {
+            //    tx_prix.value = tarif * tx_nba.value;
+            //}
+            //if (tx_nba.value > 1 && tx_nbe.value > 1) {
+            //    alert("vous devez choisir l'offres familiale")
+
+            //}
+            //if (tx_nba.value == 0 && tx_nbe.value == 0) {
+            //    alert("ERREUR,impossible de passer une réservation qui contient aucune perssone")
+            //}
+        });
+
+        tx_nba.addEventListener("change", function () {
+
+            if (tx_nba.value != 0) {
+                tx_prix.value = (tx_nba.value * tarif + tx_nbe.value * tarif_enf) * dure.value;
+            }
+            if (tx_nba.value == 0) {
+                alert("Attention,Le nombre d'adultes ou d'enfants ne doit pas etre null");
+                tx_prix.value = "";
+                tx_nbe.value = "";
+                tx_nba.value = "";
+
+
+            }
+        });
+
+        dure.addEventListener("change", function () {
+
+            if (tx_nba.value != 0) {
+                tx_prix.value = (tx_nba.value * tarif + tx_nbe.value * tarif_enf) * dure.value;
+            }
+            if (tx_nba.value == 0) {
+                alert("Attention,Le nombre d'adultes ou d'enfants ne doit pas etre null");
+                tx_prix.value = "";
+                tx_nbe.value = "";
+                tx_nba.value = "";
+
+
+            }
+        });
+
+
+
+
+    </script>
+</body>
+</html>

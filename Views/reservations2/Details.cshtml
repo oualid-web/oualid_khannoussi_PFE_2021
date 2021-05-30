@@ -1,0 +1,74 @@
+﻿@model gestion_riad_projet_fin_etude.Models.reservation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dat_res)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dat_res)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Typpe_res)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Typpe_res)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duré_res)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duré_res)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nb_Adult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nb_Adult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nb_Enfant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nb_Enfant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.Nom_clt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.Nom_clt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employé.Nom_empl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employé.Nom_empl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,169 @@
+﻿@model IEnumerable<gestion_riad_projet_fin_etude.Models.Employé>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-image: url('../../Content/image/image_aceuil/pexels-pixabay-414645.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        span {
+            background-color: orangered;
+        }
+
+
+
+        th {
+            text-align: center;
+            color: black;
+            font-size: large;
+            border: solid 2px white;
+            background-color: #e2aa5b;
+            border: solid 2px white;
+        }
+
+        td {
+            background-color: rgba(0,0,0,0.6);
+            text-align: center;
+            color: white;
+            border: solid 2px white;
+        }
+
+        h2 {
+            color: bisque;
+            text-align: left;
+            font-size: x-large;
+        }
+
+        .back {
+            background-color: rgba(0,0,0,0.7);
+            width: 250px;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+        }
+
+            .back:hover {
+                background-color: gold;
+                border-radius: 10px;
+            }
+
+        .go {
+            background-color: rgba(0,0,0,0.7);
+            width: 250px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+            .go:hover {
+                background-color: gold;
+                border-radius: 10px;
+            }
+    </style>
+</head>
+<body>
+
+    <h1>Riad <span>A</span>l'Wazir</h1>
+    <h2>Liste des employé</h2><hr style="background-color:yellow;height:3px;" />
+
+    <p class="back" style="color:white">
+        @Html.ActionLink(" nouveau Employé", "Create")
+    </p><br />
+    <div class="container">
+        <table class="table" style="width:100%;">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nom_empl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prénom_empl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.télé_empl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.repos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dat_embouchement)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gerant.Num_gerant)
+                </th>
+               
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nom_empl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prénom_empl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.télé_empl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.repos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dat_embouchement)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gerant.Num_gerant)
+                    </td>
+                    
+
+                </tr>
+            }
+
+        </table><br /><br />
+
+
+
+        <p class="go">
+            @Html.ActionLink("Quitter", "Index", "Home")
+        </p>
+
+    </div>
+
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Gestion_riad2ModelStoreContainer" CdmEntityContainer="Gestion_riad2Entities1">
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="Gestion_riad2Model.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Num_clt" ColumnName="Num_clt" />
+          <ScalarProperty Name="Nom_clt" ColumnName="Nom_clt" />
+          <ScalarProperty Name="Prenom_clt" ColumnName="Prenom_clt" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="Nationalité" ColumnName="Nationalité" />
+          <ScalarProperty Name="télé_clt" ColumnName="télé_clt" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employé">
+      <EntityTypeMapping TypeName="Gestion_riad2Model.Employé">
+        <MappingFragment StoreEntitySet="Employé">
+          <ScalarProperty Name="Num_empl" ColumnName="Num_empl" />
+          <ScalarProperty Name="Nom_empl" ColumnName="Nom_empl" />
+          <ScalarProperty Name="Prénom_empl" ColumnName="Prénom_empl" />
+          <ScalarProperty Name="télé_empl" ColumnName="télé_empl" />
+          <ScalarProperty Name="repos" ColumnName="repos" />
+          <ScalarProperty Name="dat_embouchement" ColumnName="dat_embouchement" />
+          <ScalarProperty Name="Num_gerant" ColumnName="Num_gerant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gerant">
+      <EntityTypeMapping TypeName="Gestion_riad2Model.Gerant">
+        <MappingFragment StoreEntitySet="Gerant">
+          <ScalarProperty Name="Num_gerant" ColumnName="Num_gerant" />
+          <ScalarProperty Name="Nom_gerant" ColumnName="Nom_gerant" />
+          <ScalarProperty Name="Prénom_gerant" ColumnName="Prénom_gerant" />
+          <ScalarProperty Name="Numero_télé" ColumnName="Numero_télé" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reservation">
+      <EntityTypeMapping TypeName="Gestion_riad2Model.reservation">
+        <MappingFragment StoreEntitySet="reservation">
+          <ScalarProperty Name="Num_res" ColumnName="Num_res" />
+          <ScalarProperty Name="Dat_res" ColumnName="Dat_res" />
+          <ScalarProperty Name="Typpe_res" ColumnName="Typpe_res" />
+          <ScalarProperty Name="Duré_res" ColumnName="Duré_res" />
+          <ScalarProperty Name="Nb_Adult" ColumnName="Nb_Adult" />
+          <ScalarProperty Name="Nb_Enfant" ColumnName="Nb_Enfant" />
+          <ScalarProperty Name="Num_clt" ColumnName="Num_clt" />
+          <ScalarProperty Name="Num_empl" ColumnName="Num_empl" />
+          <ScalarProperty Name="Prix_res" ColumnName="Prix_res" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

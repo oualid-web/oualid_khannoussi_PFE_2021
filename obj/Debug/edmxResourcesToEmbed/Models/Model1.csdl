@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Gestion_riad2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Num_clt" />
+    </Key>
+    <Property Name="Num_clt" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nom_clt" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom_clt" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="adress" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Nationalité" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="télé_clt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="reservation" Relationship="Self.FK__reservati__Num_c__74AE54BC" FromRole="Client" ToRole="reservation" />
+  </EntityType>
+  <EntityType Name="Employé">
+    <Key>
+      <PropertyRef Name="Num_empl" />
+    </Key>
+    <Property Name="Num_empl" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nom_empl" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Prénom_empl" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="télé_empl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="repos" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dat_embouchement" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Num_gerant" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Gerant" Relationship="Self.FK__Employé__Num_ger__6B24EA82" FromRole="Employé" ToRole="Gerant" />
+    <NavigationProperty Name="reservation" Relationship="Self.FK__reservati__Num_e__75A278F5" FromRole="Employé" ToRole="reservation" />
+  </EntityType>
+  <EntityType Name="Gerant">
+    <Key>
+      <PropertyRef Name="Num_gerant" />
+    </Key>
+    <Property Name="Num_gerant" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nom_gerant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Prénom_gerant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Numero_télé" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employé" Relationship="Self.FK__Employé__Num_ger__6B24EA82" FromRole="Gerant" ToRole="Employé" />
+  </EntityType>
+  <EntityType Name="reservation">
+    <Key>
+      <PropertyRef Name="Num_res" />
+    </Key>
+    <Property Name="Num_res" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dat_res" Type="DateTime" Precision="0" />
+    <Property Name="Typpe_res" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Duré_res" Type="Int32" />
+    <Property Name="Nb_Adult" Type="Int32" />
+    <Property Name="Nb_Enfant" Type="Int32" />
+    <Property Name="Num_clt" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Num_empl" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Prix_res" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Client" Relationship="Self.FK__reservati__Num_c__74AE54BC" FromRole="reservation" ToRole="Client" />
+    <NavigationProperty Name="Employé" Relationship="Self.FK__reservati__Num_e__75A278F5" FromRole="reservation" ToRole="Employé" />
+  </EntityType>
+  <Association Name="FK__reservati__Num_c__74AE54BC">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Num_clt" />
+      </Principal>
+      <Dependent Role="reservation">
+        <PropertyRef Name="Num_clt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employé__Num_ger__6B24EA82">
+    <End Role="Gerant" Type="Self.Gerant" Multiplicity="0..1" />
+    <End Role="Employé" Type="Self.Employé" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gerant">
+        <PropertyRef Name="Num_gerant" />
+      </Principal>
+      <Dependent Role="Employé">
+        <PropertyRef Name="Num_gerant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reservati__Num_e__75A278F5">
+    <End Role="Employé" Type="Self.Employé" Multiplicity="0..1" />
+    <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employé">
+        <PropertyRef Name="Num_empl" />
+      </Principal>
+      <Dependent Role="reservation">
+        <PropertyRef Name="Num_empl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Gestion_riad2Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="Employé" EntityType="Self.Employé" />
+    <EntitySet Name="Gerant" EntityType="Self.Gerant" />
+    <EntitySet Name="reservation" EntityType="Self.reservation" />
+    <AssociationSet Name="FK__reservati__Num_c__74AE54BC" Association="Self.FK__reservati__Num_c__74AE54BC">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="reservation" EntitySet="reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employé__Num_ger__6B24EA82" Association="Self.FK__Employé__Num_ger__6B24EA82">
+      <End Role="Gerant" EntitySet="Gerant" />
+      <End Role="Employé" EntitySet="Employé" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reservati__Num_e__75A278F5" Association="Self.FK__reservati__Num_e__75A278F5">
+      <End Role="Employé" EntitySet="Employé" />
+      <End Role="reservation" EntitySet="reservation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

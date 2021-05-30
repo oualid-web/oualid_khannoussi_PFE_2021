@@ -1,0 +1,356 @@
+﻿@*@{
+        ViewBag.Title = "spaetmassage";
+    }*@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>espace_Spa Riad_Al'wazir</title>
+    <style>
+        .mynav {
+            background-color: black;
+        }
+
+            .mynav li a {
+                text-decoration: none;
+                font-family: poppins;
+                letter-spacing: 4px;
+                font-size: 20px;
+                margin: 0 10px;
+                color: #fff !important;
+            }
+
+                .mynav li a:hover {
+                    background-color: khaki;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    color: blue;
+                }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .mynav h1 {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            font-size: xx-large;
+        }
+
+        .container h2 span {
+            background-color: orangered;
+        }
+
+        .mynav h1 span {
+            background-color: orangered;
+        }
+
+        .navbar-collapse {
+            flex-basis: 100%;
+            flex-grow: 1;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.075) !important;
+        }
+
+        #home_section {
+            background-image: url('../../Content/image/espace_spa/sp2.jpg');
+            width: 100%;
+            height: 600px;
+            top: 70px;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
+
+            #home_section h2 {
+                padding-top: 20%;
+                font-size: 70px;
+                text-transform: uppercase;
+                color: white;
+                font-family: poppins;
+                font-weight: bold;
+            }
+
+
+
+
+
+        footer {
+            width: 100%;
+            background-color: black;
+        }
+
+            footer .container {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            footer ul li {
+                list-style: none;
+            }
+
+            footer h4 {
+                font-size: 18px;
+                color: #ffffff;
+                text-transform: capitalize;
+                font-weight: 500;
+                margin-bottom: 40px;
+                position: relative;
+            }
+
+
+
+            footer ul li a {
+                font-size: 20px;
+                text-transform: capitalize;
+                text-decoration: none;
+                font-weight: 300;
+                color: #e0e0e0;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+                footer ul li a:hover {
+                    color: #ffffff;
+                    padding-left: 8px;
+                    font-weight: bold;
+                }
+
+            footer .social-links a {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                background-color: rgba(255,255,255,0.2);
+                margin: 0 10px 10px 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color: #ffffff;
+                transition: all 0.5s ease;
+            }
+
+                footer .social-links a:hover {
+                    color: #24262b;
+                    background-color: #ffffff;
+                }
+
+            footer p {
+                color: rgba(221, 221, 221, 0.7);
+                font-family: 'Poppins', sans-serif;
+            }
+
+            footer hr:not([size]) {
+                height: 3px;
+                color: rgb(255, 0, 0);
+            }
+
+        .imag_class {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+            .imag_class h1 {
+                margin-bottom: 30px;
+            }
+
+            .imag_class p {
+                color: gray;
+            }
+
+        .carousel {
+            width: 700px;
+            height: 400px;
+        }
+
+        .carosel_cont {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel .carousel-indicators button {
+            height: 6px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg mynav navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1>Riad <span>A</span>l'Wazir</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> @Html.ActionLink("Accueil", "Index", "Home")</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#"> @Html.ActionLink("Le Riad ", "riad", "le_riad") </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Nos chambres", "chambres", "chambres")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Spa & Massage", "spaetmassage", "spamassage")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Cuisine", "cuisine_riad", "cuisine")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Contact", "Contact_riad", "contact")</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home_section">
+        <div class="container text-center">
+            <h2>Welcome to Riad <span>A</span>l'Wazir</h2>
+        </div>
+    </section>
+
+    <section class="imag_class">
+        <div class="container">
+
+            <div style="width: 700px;margin-left: 20%;margin-right: 20%;">
+                <br>
+                <center><h1>Spa & Massage</h1></center>
+
+                <p style="color: gray;">
+                    Le rituel de l’hammam, òu le soin du corps et le relax de l’esprit se rencontrent, est à disposition de nos clients dans le petit centre bien être present dans le Riad .<br><br>
+                    Avant le dîner, vous pouvez vous détendre avec un bain de vapeur ou avec un scrub tonifiant à la douce lumière de l’hammam en marbre de Carrara du riad. Vous pouvez aussi réserver un massage relaxant avec notre masseuse qualifiée Zaira et vous pouvez apprécier les qualités uniques de l’huile d’Argan du Maroc.<br><br>
+                    <span style="color: black;font-weight: bold;">L’Hammam: </span><br>
+                    les Arabes du 7éme siècle, et plus tard les Ottomans , ont perfectionné l’art ancienne de l’hammam que nous aimons définir aujourd’hui le « medecin silencieux » pour ses propriétés liées au bien être et santé. L’hammam est un bain de vapeur qui aide l’elimination du stress, des toxines et des impurités avec la sueur. L’hammam est un lieu intime et comfortable où vous pouvez eliminer les tensions et les preoccupations quotidiennes.<br><br>
+                    <span style="color: black;font-weight: bold;">Le Savon Noir: </span><br>
+                    un produit presque magique pour la peau, 100% vegetale, à base de pâte esfoliante a l’huile d’olive, noix d’olive et eucaliptus. Le Savon noir assouplit , nettoye et nourrit la peau qui se prepare au scrub successif.<br><br>
+                    <span style="color: black;font-weight: bold;">Le kessa</span><br>
+                    le Kessa est un gant traditionnel fait en « crepe de chine »(tissu avec un aspect ruché et granuleux obtenu avec des torsions alternées) . Il est utilisé avec le Savon noir pour un exceptionnel scrub du corps et les impurités de la peau sont eliminées avec une amélioration de la circulation sanguigne.<br><br>
+                    <span style="color: black;font-weight: bold;">Le Rassoul:</span><br>
+                    c’è produit naturel, à base d’argille des monts de l’Atlas marocains, parfumé à l’eau de roses et à l’eau d’oranger, est utilisé pour les masques du visage et du corps. C’est merveilleux pour le système musculaire, rassodant et hydratant.<br><br>
+                    <span style="color: black;font-weight: bold;">Le Body Scrub:</span><br>
+                    absolument ne pas perdre ce traitement! Avec l’utilisation de la vapeur d’eau et du gant spécial, un spécialiste qualifié enlève les cellules mortes de la peau et les impurités accumulées pendant que vous vous relâchez sur un plan de marbre rechauffé. Vous trouverez la peau immaculée et la circulation pleine de vigeur.<br>
+
+                </p>
+            </div>
+
+
+            <center>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="padding-top: 20px;">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/Content/image/espace_spa/azoulay_spa.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Content/image/espace_spa/sp1.jpeg" class="d-block w-100" alt="..." style="height: 470px;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Content/image/espace_spa/sp2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Content/image/espace_spa/sp3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/Content/image/espace_spa/sp4.jpg" class="d-block w-100" alt="..." style="height: 470px;">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </center>
+
+
+
+        </div>
+
+
+    </section>
+
+    <section class="content-area">
+        <div class="wrapper text-center">
+
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>Adresse</h4><hr>
+                            <p>Riad_Al'Wazir. 3,derb_JamaaelKbir_RiadZitoun.<br> Marrakech,Maroc</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Reservation</h4><hr>
+                            <p>Tel:00_212_(0)_5_2438_3729 <br> Riad_Alwazir@gmail.com</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>online shop</h4><hr>
+                            <ul>
+                                <li><a href="#"></a> @Html.ActionLink("Accueil", "Index", "Home")</li>
+                                <li><a href="#">@Html.ActionLink("Le Riad ", "riad", "le_riad")</a></li>
+                                <li><a href="#">@Html.ActionLink("Nos chambres", "chambres", "chambres")</a></li>
+                                <li><a href="#">@Html.ActionLink("Spa & Massage", "spaetmassage", "spamassage")</a></li>
+                                <li><a href="#">@Html.ActionLink("Cuisine", "cuisine_riad", "cuisine")</a></li>
+                                <li><a href="#">@Html.ActionLink("Contact", "Contact_riad", "contact")</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>follow us</h4><hr>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </section>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,295 @@
+﻿@model gestion_riad_projet_fin_etude.Models.reservation
+
+
+
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('../../Content/image/image_aceuil/azoulay_pisicne.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .form-horizontal {
+            max-width: 380px;
+            margin: auto;
+            margin-top: 70px;
+            background-color: rgba(0,0, 0,0.8);
+            text-align: center;
+            border-radius: 20px;
+            padding: 40px;
+            color: #ffff;
+            box-sizing: border-box;
+        }
+
+        .form-control {
+            width: 100%;
+            margin: 10px 25px;
+            outline: none;
+            background-color: transparent;
+            color: #ffff;
+            padding: 10px 6px;
+            font-size: 18px;
+            font-weight: bold;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px #fff solid;
+            height: 40px;
+        }
+
+        .control-label {
+            color: #ffff;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+            margin-left: -10px;
+        }
+
+        .btn {
+            width: 80%;
+            border-radius: 12px;
+            padding: 10px;
+            background-color: rgb(90,120,190);
+            color: #fff;
+            font-size: 20px;
+            outline: none;
+            cursor: pointer;
+            margin: 30px 50px 0px 10px;
+        }
+
+            .btn:hover {
+                background-color: gold;
+            }
+
+        h3 {
+            color: #ffff;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .a {
+            background-color: orangered;
+        }
+
+        .select {
+            color: saddlebrown;
+        }
+
+        #type {
+            color: aquamarine;
+        }
+
+        #prix {
+            color: aquamarine;
+        }
+
+        #prix {
+            padding-left: 80px;
+        }
+
+        .text-danger {
+            color: red;
+            background-color: transparent;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h1>Riad <span class="a">A</span>l'Wazir</h1>
+        <div class="form-horizontal">
+
+            <h3>reservation</h3>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Dat_res, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Dat_res, new { htmlAttributes = new { placeholder = "AAAA/MM/JJ", @class = "form-control", @id = "dat_res" } })
+                    @Html.ValidationMessageFor(model => model.Dat_res, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Typpe_res, "Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Typpe_res, new { htmlAttributes = new { @class = "form-control", @id = "type", @readonly = "true" } })
+                    @Html.ValidationMessageFor(model => model.Typpe_res, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Duré_res, "Duré", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Duré_res, new { htmlAttributes = new { placeholder = "Nombre des jours", @class = "form-control", @id = "dure_res" } })
+                    @Html.ValidationMessageFor(model => model.Duré_res, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nb_Adult, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nb_Adult, new { htmlAttributes = new { placeholder = "Nombre d'adulte", @class = "form-control adl", @id = "adl" } })
+                    @Html.ValidationMessageFor(model => model.Nb_Adult, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nb_Enfant, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Nb_Enfant, new { htmlAttributes = new { placeholder = "Nombre d'enfant", @class = "form-control enf ", @id = "enf" } })
+                    @Html.ValidationMessageFor(model => model.Nb_Enfant, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Client.Num_clt, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Num_clt", null, htmlAttributes: new { @class = "form-control select" })
+                    @Html.ValidationMessageFor(model => model.Client.Num_clt, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Prix_res, "Prix", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Prix_res, "", new { htmlAttributes = new { @class = "form-control ", @id = "prix", @readonly = "true" } })
+                    @*@Html.ValidationMessageFor(model => model.Prix_res, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+    <script type="text/javascript">
+
+        var tx_prix = document.getElementById("prix");
+        var tx_nba = document.getElementById("adl");
+        var tx_nbe = document.getElementById("enf");
+        var tp = document.getElementById("type");
+        var num = document.getElementById("num_res");
+        var dat = document.getElementById("dat_res");
+        var dure = document.getElementById("dure_res");
+
+
+        tarif = 110;
+        tarif_enf = tarif / 2;
+        tx_prix.value = 110 + ",00 €";
+        tp.value = "        Atelier Culinaire ";
+        tx_nbe.addEventListener("change", function () {
+
+            if (tx_nba.value != 0) {
+                tx_prix.value = (tx_nba.value * tarif + tx_nbe.value * tarif_enf) * dure.value;
+            }
+            if (tx_nba.value == 0) {
+                alert("Attention,Le nombre d'adultes ou d'enfants ne doit pas etre null");
+                tx_prix.value = "";
+                tx_nbe.value = "";
+                tx_nba.value = "";
+            }
+
+            //if (tx_nba.value == 2 && tx_nbe.value == 0) {
+            //    tx_prix.value = tarif;
+            //}
+            //if (tx_nba.value == 1 && tx_nbe.value == 0) {
+            //    tx_prix.value = tarif / 2;
+            //}
+            //if (tx_nba.value == 1 && tx_nbe.value == 1) {
+            //    tx_prix.value = tarif / 2 + tarif / 4;
+            //}
+            //if (tx_nba.value > 2 && tx_nbe.value == 0) {
+            //    tx_prix.value = tarif * tx_nba.value;
+            //}
+            //if (tx_nba.value > 1 && tx_nbe.value > 1) {
+            //    alert("vous devez choisir l'offres familiale")
+
+            //}
+            //if (tx_nba.value == 0 && tx_nbe.value == 0) {
+            //    alert("ERREUR,impossible de passer une réservation qui contient aucune perssone")
+            //}
+        });
+
+        tx_nba.addEventListener("change", function () {
+
+            if (tx_nba.value != 0) {
+                tx_prix.value = (tx_nba.value * tarif + tx_nbe.value * tarif_enf) * dure.value;
+            }
+            if (tx_nba.value == 0) {
+                alert("Attention,Le nombre d'adultes ou d'enfants ne doit pas etre null");
+                tx_prix.value = "";
+                tx_nbe.value = "";
+                tx_nba.value = "";
+
+
+            }
+        });
+
+        dure.addEventListener("change", function () {
+
+            if (tx_nba.value != 0) {
+                tx_prix.value = (tx_nba.value * tarif + tx_nbe.value * tarif_enf) * dure.value;
+            }
+            if (tx_nba.value == 0) {
+                alert("Attention,Le nombre d'adultes ou d'enfants ne doit pas etre null");
+                tx_prix.value = "";
+                tx_nbe.value = "";
+                tx_nba.value = "";
+
+
+            }
+        });
+
+
+
+
+    </script>
+
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+
+</body>
+</html>
+
+
+
+

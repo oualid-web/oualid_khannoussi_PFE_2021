@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Gestion_riad2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Num_clt" />
+          </Key>
+          <Property Name="Num_clt" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Nom_clt" Type="varchar" MaxLength="30" />
+          <Property Name="Prenom_clt" Type="varchar" MaxLength="30" />
+          <Property Name="adress" Type="varchar" MaxLength="70" />
+          <Property Name="Nationalité" Type="varchar" MaxLength="20" />
+          <Property Name="télé_clt" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employé">
+          <Key>
+            <PropertyRef Name="Num_empl" />
+          </Key>
+          <Property Name="Num_empl" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Nom_empl" Type="varchar" MaxLength="30" />
+          <Property Name="Prénom_empl" Type="varchar" MaxLength="30" />
+          <Property Name="télé_empl" Type="varchar" MaxLength="20" />
+          <Property Name="repos" Type="varchar" MaxLength="10" />
+          <Property Name="dat_embouchement" Type="varchar" MaxLength="20" />
+          <Property Name="Num_gerant" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="Gerant">
+          <Key>
+            <PropertyRef Name="Num_gerant" />
+          </Key>
+          <Property Name="Num_gerant" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Nom_gerant" Type="varchar" MaxLength="30" />
+          <Property Name="Prénom_gerant" Type="varchar" MaxLength="30" />
+          <Property Name="Numero_télé" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="Num_res" />
+          </Key>
+          <Property Name="Num_res" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dat_res" Type="date" />
+          <Property Name="Typpe_res" Type="varchar" MaxLength="50" />
+          <Property Name="Duré_res" Type="int" />
+          <Property Name="Nb_Adult" Type="int" />
+          <Property Name="Nb_Enfant" Type="int" />
+          <Property Name="Num_clt" Type="varchar" MaxLength="6" />
+          <Property Name="Num_empl" Type="varchar" MaxLength="6" />
+          <Property Name="Prix_res" Type="money" />
+        </EntityType>
+        <Association Name="FK__Employé__Num_ger__6B24EA82">
+          <End Role="Gerant" Type="Self.Gerant" Multiplicity="0..1" />
+          <End Role="Employé" Type="Self.Employé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gerant">
+              <PropertyRef Name="Num_gerant" />
+            </Principal>
+            <Dependent Role="Employé">
+              <PropertyRef Name="Num_gerant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__Num_c__74AE54BC">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Num_clt" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="Num_clt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__Num_e__75A278F5">
+          <End Role="Employé" Type="Self.Employé" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employé">
+              <PropertyRef Name="Num_empl" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="Num_empl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Gestion_riad2ModelStoreContainer">
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employé" EntityType="Self.Employé" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gerant" EntityType="Self.Gerant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Employé__Num_ger__6B24EA82" Association="Self.FK__Employé__Num_ger__6B24EA82">
+            <End Role="Gerant" EntitySet="Gerant" />
+            <End Role="Employé" EntitySet="Employé" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__Num_c__74AE54BC" Association="Self.FK__reservati__Num_c__74AE54BC">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__Num_e__75A278F5" Association="Self.FK__reservati__Num_e__75A278F5">
+            <End Role="Employé" EntitySet="Employé" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Gestion_riad2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Num_clt" />
+          </Key>
+          <Property Name="Num_clt" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nom_clt" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Prenom_clt" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="adress" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Nationalité" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="télé_clt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="reservation" Relationship="Self.FK__reservati__Num_c__74AE54BC" FromRole="Client" ToRole="reservation" />
+        </EntityType>
+        <EntityType Name="Employé">
+          <Key>
+            <PropertyRef Name="Num_empl" />
+          </Key>
+          <Property Name="Num_empl" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nom_empl" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Prénom_empl" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="télé_empl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="repos" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="dat_embouchement" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Num_gerant" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Gerant" Relationship="Self.FK__Employé__Num_ger__6B24EA82" FromRole="Employé" ToRole="Gerant" />
+          <NavigationProperty Name="reservation" Relationship="Self.FK__reservati__Num_e__75A278F5" FromRole="Employé" ToRole="reservation" />
+        </EntityType>
+        <EntityType Name="Gerant">
+          <Key>
+            <PropertyRef Name="Num_gerant" />
+          </Key>
+          <Property Name="Num_gerant" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nom_gerant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Prénom_gerant" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Numero_télé" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employé" Relationship="Self.FK__Employé__Num_ger__6B24EA82" FromRole="Gerant" ToRole="Employé" />
+        </EntityType>
+        <EntityType Name="reservation">
+          <Key>
+            <PropertyRef Name="Num_res" />
+          </Key>
+          <Property Name="Num_res" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dat_res" Type="DateTime" Precision="0" />
+          <Property Name="Typpe_res" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Duré_res" Type="Int32" />
+          <Property Name="Nb_Adult" Type="Int32" />
+          <Property Name="Nb_Enfant" Type="Int32" />
+          <Property Name="Num_clt" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Num_empl" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Prix_res" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__reservati__Num_c__74AE54BC" FromRole="reservation" ToRole="Client" />
+          <NavigationProperty Name="Employé" Relationship="Self.FK__reservati__Num_e__75A278F5" FromRole="reservation" ToRole="Employé" />
+        </EntityType>
+        <Association Name="FK__reservati__Num_c__74AE54BC">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Num_clt" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="Num_clt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employé__Num_ger__6B24EA82">
+          <End Role="Gerant" Type="Self.Gerant" Multiplicity="0..1" />
+          <End Role="Employé" Type="Self.Employé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gerant">
+              <PropertyRef Name="Num_gerant" />
+            </Principal>
+            <Dependent Role="Employé">
+              <PropertyRef Name="Num_gerant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__Num_e__75A278F5">
+          <End Role="Employé" Type="Self.Employé" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employé">
+              <PropertyRef Name="Num_empl" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="Num_empl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Gestion_riad2Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Client" EntityType="Self.Client" />
+          <EntitySet Name="Employé" EntityType="Self.Employé" />
+          <EntitySet Name="Gerant" EntityType="Self.Gerant" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" />
+          <AssociationSet Name="FK__reservati__Num_c__74AE54BC" Association="Self.FK__reservati__Num_c__74AE54BC">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employé__Num_ger__6B24EA82" Association="Self.FK__Employé__Num_ger__6B24EA82">
+            <End Role="Gerant" EntitySet="Gerant" />
+            <End Role="Employé" EntitySet="Employé" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__Num_e__75A278F5" Association="Self.FK__reservati__Num_e__75A278F5">
+            <End Role="Employé" EntitySet="Employé" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Gestion_riad2ModelStoreContainer" CdmEntityContainer="Gestion_riad2Entities1">
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="Gestion_riad2Model.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Num_clt" ColumnName="Num_clt" />
+                <ScalarProperty Name="Nom_clt" ColumnName="Nom_clt" />
+                <ScalarProperty Name="Prenom_clt" ColumnName="Prenom_clt" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="Nationalité" ColumnName="Nationalité" />
+                <ScalarProperty Name="télé_clt" ColumnName="télé_clt" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employé">
+            <EntityTypeMapping TypeName="Gestion_riad2Model.Employé">
+              <MappingFragment StoreEntitySet="Employé">
+                <ScalarProperty Name="Num_empl" ColumnName="Num_empl" />
+                <ScalarProperty Name="Nom_empl" ColumnName="Nom_empl" />
+                <ScalarProperty Name="Prénom_empl" ColumnName="Prénom_empl" />
+                <ScalarProperty Name="télé_empl" ColumnName="télé_empl" />
+                <ScalarProperty Name="repos" ColumnName="repos" />
+                <ScalarProperty Name="dat_embouchement" ColumnName="dat_embouchement" />
+                <ScalarProperty Name="Num_gerant" ColumnName="Num_gerant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gerant">
+            <EntityTypeMapping TypeName="Gestion_riad2Model.Gerant">
+              <MappingFragment StoreEntitySet="Gerant">
+                <ScalarProperty Name="Num_gerant" ColumnName="Num_gerant" />
+                <ScalarProperty Name="Nom_gerant" ColumnName="Nom_gerant" />
+                <ScalarProperty Name="Prénom_gerant" ColumnName="Prénom_gerant" />
+                <ScalarProperty Name="Numero_télé" ColumnName="Numero_télé" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reservation">
+            <EntityTypeMapping TypeName="Gestion_riad2Model.reservation">
+              <MappingFragment StoreEntitySet="reservation">
+                <ScalarProperty Name="Num_res" ColumnName="Num_res" />
+                <ScalarProperty Name="Dat_res" ColumnName="Dat_res" />
+                <ScalarProperty Name="Typpe_res" ColumnName="Typpe_res" />
+                <ScalarProperty Name="Duré_res" ColumnName="Duré_res" />
+                <ScalarProperty Name="Nb_Adult" ColumnName="Nb_Adult" />
+                <ScalarProperty Name="Nb_Enfant" ColumnName="Nb_Enfant" />
+                <ScalarProperty Name="Num_clt" ColumnName="Num_clt" />
+                <ScalarProperty Name="Num_empl" ColumnName="Num_empl" />
+                <ScalarProperty Name="Prix_res" ColumnName="Prix_res" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

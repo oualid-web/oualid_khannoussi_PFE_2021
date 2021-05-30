@@ -1,0 +1,397 @@
+﻿
+@*@{
+    ViewBag.Title = "ofr";
+}*@
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>espace_Offres Riad_Al'wazir</title>
+    <style>
+        .mynav {
+            background-color: black;
+        }
+
+            .mynav li a {
+                text-decoration: none;
+                font-family: poppins;
+                letter-spacing: 4px;
+                font-size: 20px;
+                margin: 0 10px;
+                color: #fff !important;
+            }
+
+                .mynav li a:hover {
+                    background-color: khaki;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    color: blue;
+                }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .mynav h1 {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            font-size: xx-large;
+        }
+
+        .container h2 span {
+            background-color: orangered;
+        }
+
+        .mynav h1 span {
+            background-color: orangered;
+        }
+
+        .navbar-collapse {
+            flex-basis: 100%;
+            flex-grow: 1;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.075) !important;
+        }
+
+        #home_section {
+            background-image: url('../../Content/image/espace_ofr/offre_special.PNG');
+            width: 100%;
+            height: 600px;
+            top: 70px;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
+
+            #home_section h2 {
+                padding-top: 20%;
+                font-size: 70px;
+                text-transform: uppercase;
+                color: white;
+                font-family: poppins;
+                font-weight: bold;
+            }
+
+
+
+
+
+        footer {
+            width: 100%;
+            background-color: black;
+        }
+
+            footer .container {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            footer ul li {
+                list-style: none;
+            }
+
+            footer h4 {
+                font-size: 18px;
+                color: #ffffff;
+                text-transform: capitalize;
+                font-weight: 500;
+                margin-bottom: 40px;
+                position: relative;
+            }
+
+
+
+            footer ul li a {
+                font-size: 20px;
+                text-transform: capitalize;
+                text-decoration: none;
+                font-weight: 300;
+                color: #e0e0e0;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+                footer ul li a:hover {
+                    color: #ffffff;
+                    padding-left: 8px;
+                    font-weight: bold;
+                }
+
+            footer .social-links a {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                background-color: rgba(255,255,255,0.2);
+                margin: 0 10px 10px 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color: #ffffff;
+                transition: all 0.5s ease;
+            }
+
+                footer .social-links a:hover {
+                    color: #24262b;
+                    background-color: #ffffff;
+                }
+
+            footer p {
+                color: rgba(221, 221, 221, 0.7);
+                font-family: 'Poppins', sans-serif;
+            }
+
+            footer hr:not([size]) {
+                height: 3px;
+                color: rgb(255, 0, 0);
+            }
+
+        .imag_class {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+            .imag_class h1 {
+                margin-bottom: 30px;
+            }
+
+            .imag_class p {
+                color: gray;
+            }
+
+        .carousel {
+            width: 700px;
+            height: 400px;
+        }
+
+        .carosel_cont {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel .carousel-indicators button {
+            height: 6px;
+            width: 50px;
+        }
+
+        .reserver a:hover {
+            border-radius: 10px;
+        }
+
+        .sp {
+            background-color: rgba(92, 90, 90,0.6);
+            padding: 8px;
+        }
+
+            .sp:hover {
+                background-color: black;
+                border-radius: 8px;
+                background-color: gold;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg mynav navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1>Riad <span>A</span>l'Wazir</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> @Html.ActionLink("Accueil", "Index", "Home")</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#"> @Html.ActionLink("Le Riad ", "riad", "le_riad") </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Nos chambres", "chambres", "chambres")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Spa & Massage", "spaetmassage", "spamassage")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Cuisine", "cuisine_riad", "cuisine")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Contact", "Contact_riad", "contact")</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home_section">
+        <div class="container text-center">
+            <h2>Welcome to Riad <span>A</span>l'Wazir</h2>
+        </div>
+    </section>
+
+    <section class="imag_class">
+        <div class="container">
+
+            <div>
+                <br>
+
+
+                <h1>Offres Spéciales</h1>
+                <h3 style="font-weight: normal;color:rgba(90, 74, 3, 0.884);">Formule « Bien Être »:</h3>
+
+                <p style="color: gray;">
+                    – 1 séance d’une heure de hammam et gommage pour une personne<br>
+                    – 2 séances de une heure de massage<br>
+                    – Transfer de/ pour l’aeroport<br>
+                    – Accueil Vip<br>
+                    – 1 dîner au riad pour une personne<br>
+                    – petit déjeuner<br><br>
+
+                    Prix a partir de <br><span style="font-size:x-large;font-weight: bold;color:peachpuff;">170,00 €</span>
+                    <div class="reserver" style="margin-left: 40px;">
+
+
+                        <span class="sp"> @Html.ActionLink("Réserver Maintenant", "Create", "Clients")</span>
+
+                    </div>
+            </div>
+
+            <div>
+                <br>
+
+
+                <h3 style="font-weight: normal;color:rgba(90, 74, 3, 0.884);padding-top: 20px;">Formule « Petite Escapade »:</h3>
+
+                <p style="color: gray;">
+                    – 1 séance de d’une heure de hammam et gommage pour une personne<br>
+                    – 1 dîner au riad pour une personne<br>
+                    – Transfert de/ pour l’aeroport<br>
+                    – Accueil Vip.<br>
+                    – petit déjeuner <br><br />
+
+                    Prix a partir de <br><span style="font-size:x-large;font-weight: bold;color:peachpuff;">150,00 €</span>
+                    <div class="reserver" style="margin-left: 40px;">
+                        <span class="sp"> @Html.ActionLink("Réserver Maintenant", "Create", "Clients1")</span>
+                    </div>
+            </div>
+
+            <div>
+                <br>
+
+
+                <h3 style="font-weight: normal;color:rgba(90, 74, 3, 0.884);padding-top: 20px;">Formule « Atelier Culinaire »:</h3>
+
+                <p style="color: gray;">
+                    – Visite au marché du quartier, achat de produits frais et de saison<br>
+                    – Cours de cuisine avec notre cuisinière  Safa<br>
+                    – 1 dîner au riad pour une personne<br>
+                    – Transfer de/ pour l’aeroport<br>
+                    – Accueil Vip<br>
+                    – petit déjeuner<br><br />
+                    Prix a partir de <br><span style="font-size:x-large;font-weight: bold;color:peachpuff;">110,00 €</span>
+                    <div class="reserver" style="margin-left: 40px;">
+                        <span class="sp"> @Html.ActionLink("Réserver Maintenant", "Create", "Clients2")</span>
+                    </div><br /><br />
+                <p style="color:red;">les enfants qu'on -13ans vont payer la moitié du prix</p>
+            </div>
+
+            <div>
+                <br>
+
+
+                <h3 style="font-weight: normal;color:rgba(90, 74, 3, 0.884);padding-top: 20px;"> Le Riad Al'wazir est heureux de vous offrir nombreux services de concierge:</h3>
+
+                <p style="color: gray;">
+                    – Assistance à la planification de votre itineraire<br>
+                    – Réserver le transport local et transfer de/ pour l’aeroport<br>
+                    – Visite guidée de la ville avec guide professionnels officiers<br>
+                    – Réservation pour restaurant et centre bien être<br>
+                    – Conseils pour le shopping<br>
+                    – Conseils pour les tours d’une journée et plusieurs (Essaouira , Haut Atlas)<br>
+                    – Service de blanchisserie<br>
+                    – Service de baby- sitter<br>
+                </p>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </section>
+
+    <section class="content-area">
+        <div class="wrapper text-center">
+
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>Adresse</h4><hr>
+                            <p>Riad_Al'Wazir. 3,derb_JamaaelKbir_RiadZitoun.<br> Marrakech,Maroc</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Reservation</h4><hr>
+                            <p>Tel:00_212_(0)_5_2438_3729 <br> Riad_Alwazir@gmail.com</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>online shop</h4><hr>
+                            <ul>
+                                <li><a href="#"></a> @Html.ActionLink("Accueil", "Index", "Home")</li>
+                                <li><a href="#">@Html.ActionLink("Le Riad ", "riad", "le_riad")</a></li>
+                                <li><a href="#">@Html.ActionLink("Nos chambres", "chambres", "chambres")</a></li>
+                                <li><a href="#">@Html.ActionLink("Spa & Massage", "spaetmassage", "spamassage")</a></li>
+                                <li><a href="#">@Html.ActionLink("Cuisine", "cuisine_riad", "cuisine")</a></li>
+                                <li><a href="#">@Html.ActionLink("Contact", "Contact_riad", "contact")</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>follow us</h4><hr>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </section>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

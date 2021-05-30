@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: none;
+        }
+
+        #home_section p {
+            padding-top: 15%;
+            padding-left: 15px;
+            font-size: 45px;
+            font-family: poppins;
+            text-transform: uppercase;
+            color: #ffd800;
+            text-align: center;
+            height:400px;
+            background-color:rgba(0,0,0,0.3);
+            font-weight:bold;
+        }
+
+        #home_section {
+           
+            background-image: url('../../Content/image/image_aceuil/pexels-andrew-neel-2312369.jpg');
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        h1 {
+            color: #dc9627;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        li {
+            text-align: center;
+            font-weight: bold;
+            border: solid 2px black;
+            margin-top: 5px;
+            width: 250px;
+            height: 30px;
+            padding-top: 10px;
+            margin: auto;
+            border-radius: 10px;
+            background-color: #f5f0e1;
+        }
+
+        a {
+            color: #ff6e40;
+        }
+
+        li:hover {
+            background-color: #1e3d59;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <section id="home_section">
+        <div class="container text-center">
+            <p>bienvenue dans l'espace gérant</p>
+        </div>
+    </section><br />
+    <h1>Gestion d'employé</h1>
+    <section>
+        <ul>
+            <li><a href="#">@Html.ActionLink("Liste d'employer", "Index", "Employé1")</a></li>
+            <br />
+            <li><a href="#">@Html.ActionLink("Nouveau d'employer", "Create", "Employé1")</a></li>
+            <br />
+            <li><a href="#">@Html.ActionLink("Modifier un employer", "Index", "Employé1")</a></li>
+            <br />
+            <li><a href="#">@Html.ActionLink("Supprimer un employer", "Index", "Employé1")</a></li>
+            <br />
+        </ul>
+    </section>
+
+</body>
+</html>
+

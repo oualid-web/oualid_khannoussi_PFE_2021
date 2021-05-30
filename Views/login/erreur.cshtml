@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "erreur";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: none;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color: red
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .erreur {
+            background-color: rgba(0,0,0,0.6);
+            height: 80px;
+            border: solid 2px black;
+            border-radius: 6px;
+            padding-top: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: bold;
+            color: red;
+        }
+
+        p {
+            color: #ffff;
+            padding-top: 5px;
+            font-size: 12px;
+        }
+
+        a {
+            color: lawngreen;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+            a:hover {
+                color: aquamarine;
+            }
+    </style>
+</head>
+<body>
+    <h1>Erreur</h1><br />
+    <div><img src="~/Content/image/image_aceuil/avrtissement.PNG" /></div>
+    <div class="erreur">
+        <h2>Message d'avirtissement</h2>
+        <p>Vous n'avez pas le droit d'accéder au plat de form 'Gérant'<br />Votre nom ou votre mot de passe est incorrecte.</p>
+    </div><br />
+    <span>@Html.ActionLink("Réessayer de nouveau", "Login", "login")</span>
+
+</body>
+</html>
+

@@ -1,0 +1,442 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>Accueil_Riad Al'wazir</title>
+    <style>
+        .mynav {
+            background-color: black;
+        }
+
+            .mynav li a {
+                text-decoration: none;
+                letter-spacing: 4px;
+                font-size: 20px;
+                margin: 0 10px;
+                color: #fff !important;
+            }
+
+                .mynav li a:hover {
+                    background-color: khaki;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    color: blue;
+                }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .mynav h1 {
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: italic;
+            font-size: xx-large;
+        }
+
+            .mynav h1 span {
+                background-color: orangered;
+            }
+
+        .navbar-collapse {
+            flex-basis: 100%;
+            flex-grow: 1;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.075);
+        }
+
+        #home_section {
+            background-image: url('../../Content/image/image_aceuil/azoulay_pisicne.jpg');
+
+            width: 100%;
+            height: 800px;
+            position: fixed;
+            top: 70px;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+        }
+
+            #home_section h2 {
+                padding-top: 10%;
+                font-size: 70px;
+                font-family: poppins;
+                text-transform: uppercase;
+                color: #fff;
+            }
+
+        .content-area {
+            width: 100%;
+            position: relative;
+            top: 600px;
+            background: rgba(255, 255, 255, 0.7);
+            height: 1000px;
+        }
+
+            .content-area h2 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                padding-top: 10px;
+                width: 550px;
+            }
+
+            .content-area p {
+                padding: 2% 0px;
+                font-family: poppins;
+                line-height: 30px;
+            }
+
+        .wrapper {
+            width: 100%;
+            /*margin: 0 auto;*/
+        }
+
+        #home_section span {
+            background-color: orangered;
+        }
+
+        .dv_verifier {
+            width: 100%;
+            background-color: #7f8c8d;
+            border-radius: 5px;
+        }
+
+            .dv_verifier a {
+                color: rgb(219, 160, 88);
+                text-decoration: none;
+                font-size: large;
+                font-weight: bold;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+        .wrapper p {
+            font-size: large;
+        }
+
+        .dv_verifier:hover {
+            background-color: rgba(0, 0, 0, 0.825);
+            border-radius: 10px;
+        }
+
+        .content-holder {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-area .col-md-4 {
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+        }
+
+            .content-area .col-md-4 img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: all .9s;
+            }
+
+            .content-area .col-md-4 h1 a {
+                color: black;
+                text-decoration: none;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: xx-large;
+                font-weight: bold;
+                transition: all .9s;
+            }
+
+            .content-area .col-md-4 h1 {
+                padding-top: 120px;
+                z-index: 600 !important;
+                position: relative;
+            }
+
+            .content-area .col-md-4:hover img {
+                transform: scale(1.3);
+            }
+
+            .content-area .col-md-4:hover h1 a {
+                color: white;
+            }
+
+            .content-area .col-md-4 .shadow {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(0, 0, 0);
+                z-index: 500;
+                opacity: 0;
+                transition: all 0.9s;
+            }
+
+            .content-area .col-md-4:hover .shadow {
+                opacity: 50%;
+            }
+
+        footer {
+            width: 100%;
+            background-color: black;
+        }
+
+            footer .container {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            footer ul li {
+                list-style: none;
+            }
+
+            footer h4 {
+                font-size: 18px;
+                color: #ffffff;
+                text-transform: capitalize;
+                font-weight: 500;
+                margin-bottom: 40px;
+                position: relative;
+            }
+
+            /*footer  h4::before{
+            content: '';
+            position: absolute;
+            left:0;
+            bottom: -10px;
+            background-color: yellow;
+            height: 2px;
+            box-sizing: border-box;
+            width: 60px;
+            transform:translate(-0%,10px) ;
+
+        }*/
+
+            footer ul li a {
+                font-size: 20px;
+                text-transform: capitalize;
+                text-decoration: none;
+                font-weight: 300;
+                color: #e0e0e0;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+                footer ul li a:hover {
+                    color: #ffffff;
+                    padding-left: 8px;
+                    font-weight: bold;
+                }
+
+            footer .social-links a {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                background-color: rgba(255,255,255,0.2);
+                margin: 0 10px 10px 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 50%;
+                color: #ffffff;
+                transition: all 0.5s ease;
+            }
+
+                footer .social-links a:hover {
+                    color: #24262b;
+                    background-color: #ffffff;
+                }
+
+            footer p {
+                color: rgba(221, 221, 221, 0.7);
+                font-family: 'Poppins', sans-serif;
+            }
+
+            footer hr:not([size]) {
+                height: 3px;
+                color: rgb(255, 0, 0);
+            }
+
+        .adm {
+            background-color: #7f8c8d;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+            .adm:hover {
+                background-color: rgba(118, 226, 245, 0.9);
+                border-radius: 10px;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg mynav navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" >
+                <h1>Riad <span>A</span>l'Wazir</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> @Html.ActionLink("Accueil", "Index", "Home")</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#"> @Html.ActionLink("Le Riad ", "riad", "le_riad") </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Nos chambres", "chambres", "chambres")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Spa & Massage", "spaetmassage", "spamassage")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Cuisine", "cuisine_riad", "cuisine")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">@Html.ActionLink("Contact", "Contact_riad", "contact")</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home_section">
+        <div class="container text-center">
+            <h2>Welcome to Riad <span>A</span>l'Wazir</h2>
+        </div>
+    </section>
+
+    <section class="content-area">
+        <div class="wrapper text-center">
+
+            <div class="content-holder">
+                <h2>
+                    <center>
+                        <div class="text-center adm">
+                            <a class="nav-link"><img src="~/Content/image/image_aceuil/administrateur.png" alt="Administration" style="width: 100px;height: 50px;"></a>
+                            <p style="text-align: center;color:black;font-weight: bold;text-decoration:none">@Html.ActionLink("Administration", "Index", "Gerant_employé")</p>
+                        </div>
+                    </center><br>
+                             <div class="dv_verifier text-center">
+                                 <a href="#">@Html.ActionLink("vérifier la disponibilité et réserver directement maintenant", "ofr", "offer")</a>
+                             </div>
+                </h2>
+            </div>
+            <p>Meilleure offre garantie pour les réservations directes</p>
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-md-4 dv_chambre">
+                        <div class="shadow"></div>
+                        <img src="~/Content/image/image_aceuil/chamber.jpg">
+                        <h1>
+                            <a href="#">@Html.ActionLink("Nos chambres", "chambres", "chambres")</a>
+                        </h1>
+                    </div>
+                    <div class="col-md-4 dv_spa">
+                        <div class="shadow"></div>
+                        <img src="~/Content/image/image_aceuil/spa.jpg">
+                        <h1>
+                            <a href="#">@Html.ActionLink("Spa & Massage", "spaetmassage", "spamassage")</a>
+                        </h1>
+                    </div>
+                    <div class="col-md-4 dv_cuisin">
+                        <div class="shadow"></div>
+                        <img src="~/Content/image/image_aceuil/cuisiin.jpg">
+                        <h1>
+                            <a href="#">@Html.ActionLink("Cuisine", "cuisine_riad", "cuisine")</a>
+                        </h1>
+                    </div>
+                    <div class="col-md-4 dv_art">
+                        <div class="shadow"></div>
+                        <img src="~/Content/image/image_aceuil/arrt.jpg">
+                        <h1>
+                            <a href="#">@Html.ActionLink("Art ", "Art_riad", "Art")</a>
+                        </h1>
+                    </div>
+                    <div class="col-md-4 dv_riad">
+                        <div class="shadow"></div>
+                        <img src="~/Content/image/image_aceuil/le riad.jpg">
+                        <h1>
+                            <a href="#"> @Html.ActionLink("Le Riad ", "riad", "le_riad")</a>
+                        </h1>
+                    </div>
+                    <div class="col-md-4 dv_ofr">
+                        <div class="shadow"></div>
+                        <img src="~/Content/image/image_aceuil/ofr.jpg">
+                        <h1>
+                            <a href="#">@Html.ActionLink("Offres Speciales ", "ofr", "offer")</a>
+                        </h1>
+
+                    </div>
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>Adresse</h4><hr>
+                            <p>Riad_Al'Wazir. 3,derb JamaaelKbir RiadZitoun. Marrakech Maroc</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Reservation</h4><hr>
+                            <p>Tel:00 212 (0) 5 2438 3729 Riad_Alwazir@gmail.com</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>online shop</h4><hr>
+                            <ul>
+                                <li><a href="#"></a> @Html.ActionLink("Accueil", "Index", "Home")</li>
+                                <li><a href="#">@Html.ActionLink("Le Riad ", "riad", "le_riad")</a></li>
+                                <li><a href="#">@Html.ActionLink("Nos chambres", "chambres", "chambres")</a></li>
+                                <li><a href="#">@Html.ActionLink("Spa & Massage", "spaetmassage", "spamassage")</a></li>
+                                <li><a href="#">@Html.ActionLink("Cuisine", "cuisine_riad", "cuisine")</a></li>
+                                <li><a href="#">@Html.ActionLink("Contact", "Contact_riad", "contact")</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>follow us</h4><hr>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
+</html>

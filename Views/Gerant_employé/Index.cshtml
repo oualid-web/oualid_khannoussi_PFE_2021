@@ -1,0 +1,135 @@
+﻿
+@{
+    
+    Layout = "~/Views/_LayoutPage1.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: none;
+            
+        }
+
+        #home_section p {
+            padding-top: 8%;
+            width:100%;
+            font-size: 45px;
+            font-family: poppins;
+            text-transform: uppercase;
+            color: #ffd800;
+            text-align:center;
+            height:300px;
+            font-weight:bold;
+            background-color:rgba(0,0,0,0.3);
+        }
+
+        #home_section {
+            
+            background-image: url('../../Content/image/image_aceuil/pexels-fauxels-3184418.jpg');
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            -webkit-background-size: cover;
+            background-position: center center;
+        }
+
+        h1 {
+            color: #dc9627;
+            text-align: center;
+            font-weight: bold;
+            border:solid 2px black;
+            background-color:darkcyan;
+            border-radius:20px;
+            width:400px;
+            margin:5px auto;
+        }
+
+        li {
+            text-align: center;
+            font-weight: bold;
+            border: solid 2px black;
+            margin-top: 5px;
+            width: 250px;
+            height: 30px;
+            padding-top: 10px;
+            margin: auto;
+            border-radius: 10px;
+            background-color: #f5f0e1;
+        }
+
+        a {
+            color: #ff6e40;
+        }
+
+        li:hover {
+            background-color: #1e3d59;
+            letter-spacing: 2px;
+        }
+
+        .dv1 {
+            background-color: red;
+            width: 250px;
+            height: 250px;
+            float: left;
+            margin-left: 350px;
+            margin-right: 40px;
+        }
+
+        .dv_2 {
+            background-color:#ffd800;
+            width: 250px;
+            height: 250px;
+            border-radius: 12px;
+            border: solid 2px black;
+        }
+        a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+       
+        
+       
+        
+       
+    </style>
+</head>
+<body>
+    <section id="home_section">
+        <div class="container text-center">
+            <p>bienvenue dans l'espace Administration</p>
+        </div>
+    </section>
+    <h1>Administration</h1>
+    <div class="container">
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <div class="dv_2"><img src="~/Content/image/image_aceuil/adm.jpg" /><span style="background-color:#ff6e40;border:solid 2px black;border-radius:5px;padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;">@Html.ActionLink("Gerant", "Login", "login")</span></div>
+            </div>
+           
+            <div class="col">
+
+            </div>
+            <div class="col">
+                <div class="dv_2"> <img src="~/Content/image/image_aceuil/empl.jpg" /><span style="background-color:#ff6e40;border:solid 2px black;border-radius:5px;padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;">@Html.ActionLink("Employé", "Login", "login_empl")</span></div>
+            </div>
+
+        </div>
+    </div><br /><br />
+    
+
+</body>
+</html>
+
